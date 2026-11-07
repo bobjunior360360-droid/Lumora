@@ -1,0 +1,16 @@
+#!/bin/bash
+# Lumora Hub: instala apps SOB DEMANDA (nada de jogos vem pré-instalado). Precisa de internet.
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+while true; do
+  C=$(kdialog --title "Lumora Hub" --menu "O que instalar?" \
+    sober "Roblox (Sober, não oficial)" steam "Steam" lutris "Lutris" \
+    onlyoffice "ONLYOFFICE (melhor compat. com .pptx)" pptweb "Abrir PowerPoint Web" sair "Sair") || exit 0
+  case $C in
+    sober) flatpak install -y flathub org.vinegarhq.Sober ;;
+    steam) flatpak install -y flathub com.valvesoftware.Steam ;;
+    lutris) flatpak install -y flathub net.lutris.Lutris ;;
+    onlyoffice) flatpak install -y flathub org.onlyoffice.desktopeditors ;;
+    pptweb) xdg-open https://powerpoint.cloud.microsoft ;;
+    *) exit 0 ;;
+  esac
+done

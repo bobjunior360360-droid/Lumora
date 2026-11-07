@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Lumora Hub
+Comment=Instalar jogos e apps de estudo
+Exec=/usr/local/bin/lumora-hub
+Icon=system-software-install
+Categories=System;Game;Office;
